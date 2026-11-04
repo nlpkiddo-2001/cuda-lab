@@ -1,0 +1,56 @@
+{
+  "modules": [
+    {
+      "title": "1 · Foundations",
+      "lessons": [
+        {"id": "01-hello-gpu", "title": "Hello GPU: kernels & launches"},
+        {"id": "02-thread-indexing", "title": "Threads, blocks, grids & warps"},
+        {"id": "03-vector-add", "title": "Device memory & vector add"},
+        {"id": "04-2d-grids", "title": "2-D grids: matrices & images"},
+        {"id": "05-errors-and-timing", "title": "Error handling & timing kernels"}
+      ]
+    },
+    {
+      "title": "2 · Memory hierarchy",
+      "lessons": [
+        {"id": "06-coalescing", "title": "Global memory coalescing"},
+        {"id": "07-shared-memory", "title": "Shared memory & tiled matmul"},
+        {"id": "08-bank-conflicts", "title": "Bank conflicts: matrix transpose"},
+        {"id": "09-constant-memory", "title": "Constant memory & read-only cache"},
+        {"id": "10-unified-memory", "title": "Unified memory & pinned memory"}
+      ]
+    },
+    {
+      "title": "3 · Parallel patterns",
+      "lessons": [
+        {"id": "11-reduction", "title": "Parallel reduction"},
+        {"id": "12-scan", "title": "Prefix sum (scan)"},
+        {"id": "13-atomics-histogram", "title": "Atomics & histograms"},
+        {"id": "14-stencil-convolution", "title": "Stencils & convolution"},
+        {"id": "15-radix-sort", "title": "Radix sort"}
+      ]
+    },
+    {
+      "title": "4 · Performance",
+      "lessons": [
+        {"id": "16-occupancy", "title": "Occupancy, registers & launch bounds"},
+        {"id": "17-warp-primitives", "title": "Warp shuffles & votes"},
+        {"id": "18-streams", "title": "Streams & copy/compute overlap"},
+        {"id": "19-ilp-unrolling", "title": "ILP, vector loads & unrolling"},
+        {"id": "20-cuda-graphs", "title": "CUDA graphs"}
+      ]
+    },
+    {
+      "title": "5 · Advanced",
+      "lessons": [
+        {"id": "21-cooperative-groups", "title": "Cooperative groups"},
+        {"id": "22-multi-gpu", "title": "Multi-GPU & peer-to-peer (4× A6000)"},
+        {"id": "23-tensor-cores", "title": "Tensor cores with WMMA"},
+        {"id": "24-fast-gemm", "title": "Building a fast GEMM"},
+        {"id": "25-fused-softmax", "title": "Fused softmax & online normalization"},
+        {"id": "26-flash-attention", "title": "Flash-attention-style kernel"},
+        {"id": "27-pytorch-extension", "title": "Your kernel as a PyTorch op"}
+      ]
+    }
+  ]
+}

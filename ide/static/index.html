@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CUDA Lab</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <button id="toggleSidebar" class="icon" title="Toggle lessons">☰</button>
+  <div class="brand">CUDA<span>Lab</span></div>
+  <div id="lessonTitle" class="lesson-title"></div>
+  <div class="spacer"></div>
+  <label class="ctl">GPU <select id="gpuSelect"></select></label>
+  <label class="ctl">nvcc flags <input id="flags" value="-O3" size="10"></label>
+  <label class="ctl">args <input id="args" value="" size="8"></label>
+  <button id="ptxBtn" title="Show generated PTX">PTX</button>
+  <button id="resetBtn" title="Reset editor to the starter code">Reset</button>
+  <button id="solutionBtn" title="Load the reference solution">Solution</button>
+  <button id="runBtn" class="primary" title="Compile & run (Ctrl+Enter)">▶ Run</button>
+</header>
+
+<main class="layout">
+  <nav id="sidebar" class="sidebar"></nav>
+
+  <section id="lessonPane" class="lesson-pane"><article id="lessonBody" class="md"></article></section>
+  <div class="hsplit" data-target="lessonPane"></div>
+
+  <section class="work">
+    <div id="editor" class="editor"></div>
+    <div class="vsplit"></div>
+    <div id="bottom" class="bottom">
+      <div class="tabs">
+        <button class="tab active" data-tab="output">Output</button>
+        <button class="tab" data-tab="viz">Visualize <span id="vizCount" class="badge"></span></button>
+        <button class="tab" data-tab="resources">Kernel resources</button>
+        <button class="tab" data-tab="ptx">PTX</button>
+        <div class="spacer"></div>
+        <span id="status" class="status">ready</span>
+      </div>
+      <div class="tab-body active" id="tab-output"><pre id="output" class="console">Press ▶ Run (Ctrl+Enter) to compile and run on the GPU.</pre></div>
+      <div class="tab-body" id="tab-viz"><div id="viz" class="viz-grid"><p class="muted">Call viz:: functions from your code to see charts here.</p></div></div>
+      <div class="tab-body" id="tab-resources"><div id="resources"><p class="muted">Per-kernel registers, shared memory, and spills from ptxas appear here after a run.</p></div></div>
+      <div class="tab-body" id="tab-ptx"><pre id="ptx" class="console">Click PTX to see the virtual assembly nvcc generates for your kernels.</pre></div>
+    </div>
+  </section>
+</main>
+<div id="tooltip" class="tooltip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+<script src="/static/viz.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
